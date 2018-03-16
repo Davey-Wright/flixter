@@ -7,6 +7,7 @@ $body-color: #222;
 
 /* Elements */
 body {
+	font-size: 16px;
 	color: $body-color;
 }
 
@@ -29,5 +30,31 @@ a {
 
 /* Primary Navigation */
 .primaryNav {
-	height: 8rem;
+	height: 5rem;
 }
+
+.primaryNav a {
+	color: white;
+}
+
+.primaryNav-links a:hover {
+	background: rgb(127, 78, 84);
+	padding: 10px 15px;
+}
+
+.primaryNav-logo {
+	font-size: 2rem;
+}
+
+.primaryNav-background{
+	background: image_url('pink-dust.png');
+	color: white;
+	box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+
+
+
+
+
+

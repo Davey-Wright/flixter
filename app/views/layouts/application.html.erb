@@ -8,30 +8,27 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='wrap'>
+  <body>
+  	<div class='primaryNav-background'>
+  		<div class='wrap'>
+  			<header class="primaryNav d-flex justify-content-between align-items-center">
+				  <h1><a href='#' class='primaryNav-logo'>Flixter</a></h1>
+			    <nav class="primaryNav-links">
+		        <a href='#' class='mr-sm-2 btn btn-clear'>
+		        	<i class="fa fa-plus-circle"></i>
+		          Link
+		        </a>
+		        <a href='#' class='mr-sm-2 btn btn-clear'>
+		        	<i class="fa fa-plus-circle"></i>
+		          Link
+		        </a>
+		   		</nav>
+		  	</header>
+			</div>
+		</div>
 
-  	<header class="primaryNav d-flex justify-content-between align-items-center">
-
-		  <a href='#' class='primaryNav-logo h4'>Explore the Vale</a>
-	    
-	    <nav class="primaryNav-links">
-        <div class='d-flex justify-content-end'>
-            <small class='mr-2'>Signed in as: <strong>Davey Wright</strong></small>
-        </div>
-
-        <a href='#' class='mr-sm-2 btn btn-clear'>
-        	<i class="fa fa-plus-circle"></i>
-          Link
-        </a>
-        <a href='#' class='mr-sm-2 btn btn-clear'>
-        	<i class="fa fa-plus-circle"></i>
-          Link
-        </a>
-
-	    </nav>
-
-		</header>
-
-    <%= yield %>
+		<main class='wrap'>
+			<%= yield %>
+		</main>
   </body>
 </html>
