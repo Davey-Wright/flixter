@@ -1,1 +1,33 @@
-@import 'bootstrap'
+@import 'bootstrap';
+
+$body-color: #222;
+
+
+
+
+/* Elements */
+body {
+	color: $body-color;
+}
+
+a {
+	text-decoration: none;
+	color: $body-color;
+}
+
+
+/* Layout */
+.wrap {
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+
+/* Typography */
+
+
+/* Primary Navigation */
+.primaryNav {
+	height: 8rem;
+}
