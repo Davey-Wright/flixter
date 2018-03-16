@@ -1,11 +1,11 @@
 @import 'bootstrap';
 
 $body-color: #222;
+$brand-color: rgb(100, 50, 60);
 
 
 
-
-/* Elements */
+/* HTML Elements */
 body {
 	font-size: 16px;
 	color: $body-color;
@@ -19,9 +19,12 @@ a {
 
 /* Layout */
 .wrap {
-	width: 90%;
+	width: 80%;
 	margin: 0 auto;
 }
+
+
+/* Elements */
 
 
 
@@ -29,28 +32,40 @@ a {
 
 
 /* Primary Navigation */
+
 .primaryNav {
-	height: 5rem;
-}
-
-.primaryNav a {
-	color: white;
-}
-
-.primaryNav-links a:hover {
-	background: rgb(127, 78, 84);
-	padding: 10px 15px;
+	z-index: 1;
+	height: 4rem;
 }
 
 .primaryNav-logo {
-	font-size: 2rem;
+	font-size: 1.75rem;
+	font-weight: bold;
+	color: $brand-color;
 }
 
-.primaryNav-background{
+
+
+
+/* Hero Section */
+.hero-bg {
 	background: image_url('pink-dust.png');
-	color: white;
-	box-shadow: 0px 1px 3px #2a2a2a;
+	background-position: fixed;
+	height: 85vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
+.hero {
+	color: white;
+	opacity: 0.9;
+	border: 1px solid white;
+	padding: 4rem 8rem;
+}
+
+
 
 
 
