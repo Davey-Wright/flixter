@@ -1,34 +1,68 @@
 @import 'bootstrap';
 
-$body-color: #222;
-$brand-color: rgb(100, 50, 60);
-
-
+$body-color: #444;
+$brand-purple: rgb(120, 70, 80);
+$brand-purple-hover: rgb(100, 50, 60);
+$call-to-action: rgb(71, 112, 100);
+$call-to-action-hover: rgb(51, 92, 80);
 
 /* HTML Elements */
+html {
+	height: 100%;
+}
+
 body {
 	font-size: 16px;
 	color: $body-color;
 }
 
-a {
+a, a:hover {
 	text-decoration: none;
 	color: $body-color;
+}
+
+abbr[title], abbr[data-original-title] {
+    text-decoration: none;
+    cursor: default;
 }
 
 
 /* Layout */
 .wrap {
-	width: 80%;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.form-wrap {
+	padding-top: 10vh;
+	width: 90%;
 	margin: 0 auto;
 }
 
 
 /* Elements */
+.btn-cta {
+	background: $call-to-action;
+	color: white;
+}
 
+.btn-cta:hover {
+	background: $call-to-action-hover;
+	color: white;
+}
+
+.btn-clear {
+	border: 1px solid $call-to-action;
+}
+.btn-clear:hover {
+	background: $call-to-action-hover;
+	border: 1px solid $call-to-action-hover;
+	color: white;
+}
 
 
 /* Typography */
+
 
 
 /* Primary Navigation */
@@ -41,9 +75,12 @@ a {
 .primaryNav-logo {
 	font-size: 1.75rem;
 	font-weight: bold;
-	color: $brand-color;
+
 }
 
+.primaryNav-logo:hover {
+	color: $brand-purple-hover;
+}
 
 
 
@@ -71,10 +108,29 @@ a {
 }
 
 
+/* Forms */
+.form-actions {
+	text-align: right;
+}
 
 
+@media (min-width: 576px) {
+	/* Layout */
+	.wrap {
+		width: 80%;
+		margin: 0 auto;
+	}
 
+	.form-wrap {
+		width: 60%;
+	}
+}
 
+@media (min-width: 992px) {
+	.form-wrap {
+		width: 40%;
+	}
+}
 
 
 
