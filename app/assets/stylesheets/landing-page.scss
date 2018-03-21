@@ -1,0 +1,22 @@
+/* Hero Section */
+.hero-bg {
+	background: image_url('pink-dust.png');
+	background-position: fixed;
+	height: 85vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero {
+	color: white;
+	opacity: 0.9;
+	border: 1px solid white;
+	padding: 4rem 8rem;
+}
+
+/* Features */
+.feature {
+	padding: 7rem 0;
+}

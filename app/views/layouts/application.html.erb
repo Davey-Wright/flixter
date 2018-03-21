@@ -16,7 +16,7 @@
 		    	<% if user_signed_in? %>
 		    		<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'mr-1 btn btn-clear' %>
 	        <% else %>
-	        	<a class='mr-1 btn btn-clear' href='#' data-toggle="modal" data-target="#logInModal">Log In</a>
+	        	<%= link_to 'Log In', new_user_session_path, data: { :toggle => 'modal', :target => '#logInModal' }, class: 'mr-1 btn btn-clear' %>
 	        	<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-cta" %>
 	        <% end %>
 	   		</nav>
@@ -33,37 +33,37 @@
 			          <span aria-hidden="true">×</span>
 			        </button>
 			      </div>
-			     	
-		      	<div class="modal-body">
-	        		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+			     	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			      	<div class="modal-body">
 							  <div class="form-inputs">
 							    <%= f.input :email, required: false, autofocus: true %>
 							    <%= f.input :password, required: false %>
 							    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 							  </div>
-						</div>
-			      <div class="modal-footer">
-			      	<div class="form-actions">
-						    <%= f.button :submit, "Log In", class: 'btn btn-cta mb-2 mr-1' %>
-						    <button type="button" class="btn btn-clear mb-2" data-dismiss="modal">Cancel</button><br/>
-						  	<%= link_to 'Forgot your Password?', new_user_password_path %>
-						  </div>
-			      </div>
-
-			      <% end %>
+							</div>
+				      <div class="modal-footer">
+				      	<div class="form-actions">
+							    <%= f.button :submit, "Log In", class: 'btn btn-cta mb-2 mr-1' %>
+							    <button type="button" class="btn btn-clear mb-2" data-dismiss="modal">Cancel</button><br/>
+							  	<%= link_to 'Forgot your Password?', new_user_password_path %>
+							  </div>
+				      </div>
+			     	<% end %>
+			     	
 				  </div>
 				</div>
 			</div>
+
 			<%= yield %>
 		</main>
 
-		<footer>
-			<div id="footer">
-	      <div class="container">
-	        <b>Footer Here</b>
-	        <br />
-	        <%= link_to 'Link', '#' %>
-	      </div>
+		<footer class='wrap'>
+				<div id='footer'>
+	        <h3>Teacher</h3>
+	        <div class='footer-links'>
+	        	<%= link_to 'Teach a Course', new_instructor_course_path %>
+	        </div>
 	    </div>
 		</footer>
   </body>

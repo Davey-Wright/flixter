@@ -1,0 +1,10 @@
+<div class='form-wrap'>
+	<h1>Create a course</h1>
+	<%= simple_form_for @course, url: instructor_courses_path do |f| %>
+		<%= f.input :title %>
+		<%= f.input :description %>
+		<%= f.input :cost %>
+		<%= f.submit 'Create Course', class: 'btn btn-cta mr-1' %>
+		<%= link_to 'Cancel', root_path, class: "btn btn-clear"%>
+	<% end %>
+</div>
