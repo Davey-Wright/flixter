@@ -1,0 +1,74 @@
+@import 'utilities/variables';
+
+.courses-wrap {
+	width: 90%;
+	margin: 6em auto;
+}
+
+.courses, .course{
+	margin-bottom: 6rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.courses-title {
+	color: $brand-purple;
+	font-size: 2rem;
+	line-height: 2em;
+	font-weight: 600;
+}
+
+.courses-cost, .course-cost {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.courses-cta {
+	align-self: flex-end;
+}
+
+.course-title {
+	font-size: 2.5rem;
+	line-height: 1.5em;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+
+.course-meta {
+	font-size: 1rem;
+	line-height: 1.5em;
+	margin-bottom: .5em;
+}
+
+.course-meta strong {
+	color: $brand-purple;
+}
+
+.course-meta span {
+	font-weight: 400;
+	font-style: italic;
+}
+
+.course-description {
+	width: 80%;
+	padding-left: 1rem;
+}
+
+.course-administer-link {
+	font-weight: 300;
+	align-self: flex-end;
+	margin-bottom: 1rem;
+}
+
+.course-body {
+	display: flex;
+	margin-bottom: 2rem;
+}
+
+.course-sidebar {
+	width: 20%;
+	padding-right: 1rem;
+	border-right: 1px solid #555;
+}
+
+

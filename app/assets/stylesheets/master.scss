@@ -14,7 +14,7 @@ body {
 
 a, a:hover {
 	text-decoration: none;
-	color: $body-color;
+	color: $brand-purple;
 }
 
 abbr[title], abbr[data-original-title] {
@@ -31,7 +31,13 @@ abbr[title], abbr[data-original-title] {
 
 .form-wrap {
 	width: 90%;
-	margin: 7em auto;
+	margin: 6em auto;
+}
+
+.nav-wrap {
+	width: 80%;
+	margin: 0 auto;
+	border-bottom: 1px solid #ddd;
 }
 
 
@@ -64,17 +70,28 @@ abbr[title], abbr[data-original-title] {
 
 .primaryNav {
 	z-index: 1;
-	height: 4rem;
+	height: 5rem;
+	padding: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
 }
 
 .primaryNav-logo {
 	font-size: 1.75rem;
 	font-weight: bold;
-
+	color: #555;
 }
 
 .primaryNav-logo:hover {
 	color: $brand-purple-hover;
+}
+
+.primaryNav-links {
+	font-weight: bold;
+	display: flex;
+	align-items: baseline;
 }
 
 
@@ -126,14 +143,18 @@ abbr[title], abbr[data-original-title] {
 		margin: 0 auto;
 	}
 
-	.form-wrap {
-		width: 60%;
+	.form-wrap, .courses-wrap {
+		width: 70%;
 	}
 }
 
 @media (min-width: 992px) {
 	.form-wrap {
-		width: 40%;
+		width: 50%;
+	}
+
+	.courses-wrap {
+		width: 60%;
 	}
 }
 

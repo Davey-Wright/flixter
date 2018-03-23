@@ -9,5 +9,8 @@
 			</div>
 			<p class='course-description'><%= @course.description %></p>
 		</div>
+		<% if current_user && current_user == @course.user %>
+			<%= link_to 'Administer', instructor_course_path, class: 'course-administer-link' %>
+		<% end %>
 	</div>
 </div>

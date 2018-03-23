@@ -3,12 +3,17 @@
 #footer {
   position: relative;
   width: 100%;
-  min-height: 100px;
-  border-top: 1px solid #222;
+  min-height: 10rem;
+  border-top: 1px solid #ddd;
   font-family: "Helvetica Neue", Helvetica;
-  padding: 3rem 0;
+  padding: 0 1rem;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-inner {
+  display: flex;
   align-items: baseline;
 }
 
