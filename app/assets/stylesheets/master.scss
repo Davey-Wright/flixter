@@ -1,10 +1,6 @@
 @import 'bootstrap';
+@import 'utilities/variables';
 
-$body-color: #444;
-$brand-purple: rgb(120, 70, 80);
-$brand-purple-hover: rgb(100, 50, 60);
-$call-to-action: rgb(71, 112, 100);
-$call-to-action-hover: rgb(51, 92, 80);
 
 /* HTML Elements */
 html {
@@ -110,6 +106,16 @@ abbr[title], abbr[data-original-title] {
 /* Forms */
 .form-actions {
 	text-align: right;
+}
+
+/* Errors */
+
+.help-block {
+  color: #ff3333;
+  background-color: #FFEEEE;
+  border-radius: 3px;
+  padding: 2px 8px 2px 8px;
+  margin: 10px;
 }
 
 

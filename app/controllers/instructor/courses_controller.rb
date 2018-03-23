@@ -7,7 +7,14 @@ class Instructor::CoursesController < ApplicationController
 
 	def create
 		@course = current_user.courses.create(course_params)
-		redirect_to instructor_course_path(@course)
+
+		if @course.valid?
+			# Why do we only specify @course instance instead of @course[:id]?
+			redirect_to instructor_course_path(@course)
+		else
+			# render new action with status of unprocessable_entity see http://guides.rubyonrails.org/layouts_and_rendering.html
+			render :new, status: :unprocessable_entity
+		end
 	end
 
 	def show
