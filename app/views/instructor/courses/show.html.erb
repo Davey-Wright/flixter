@@ -1,4 +1,8 @@
 <div class='courses-wrap'>
+	<nav class='instructor-course-nav'>
+		<%= link_to 'Preview', course_path(@course), class: 'mr-4' %>
+		<%= link_to 'Add a Section', new_instructor_course_section_path(@course) %>
+	</nav>
 	<div class='course'>
 		<h1 class='course-title'><%= @course.title %></h1>
 		<div class='course-body'>
@@ -8,6 +12,12 @@
 				<%= link_to 'Enroll Now', '#', class: 'btn btn-cta' %>
 			</div>
 			<p class='course-description'><%= @course.description %></p>
+		</div>
+		<div class='course-sections'>
+			<h2>Sections</h2>
+			<% @course.sections.each do |section| %>
+				<h3 class='course-section-title'><%= section.title %></h3>
+			<% end %>
 		</div>
 	</div>
 </div>

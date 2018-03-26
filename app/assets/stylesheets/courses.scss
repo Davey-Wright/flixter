@@ -1,5 +1,6 @@
 @import 'utilities/variables';
 
+/* COURSES VIEW */
 .courses-wrap {
 	width: 90%;
 	margin: 6em auto;
@@ -27,11 +28,18 @@
 	align-self: flex-end;
 }
 
+
+/* SINGLE COURSE VIEW */
 .course-title {
 	font-size: 2.5rem;
 	line-height: 1.5em;
 	margin-bottom: 1.5rem;
 	font-weight: 600;
+}
+
+.course-body {
+	display: flex;
+	margin-bottom: 3rem;
 }
 
 .course-meta {
@@ -54,21 +62,23 @@
 	padding-left: 1rem;
 }
 
-.course-administer-link {
-	font-weight: 300;
-	align-self: flex-end;
-	margin-bottom: 1rem;
-}
-
-.course-body {
-	display: flex;
-	margin-bottom: 2rem;
-}
-
 .course-sidebar {
 	width: 20%;
 	padding-right: 1rem;
 	border-right: 1px solid #555;
+}
+
+.course-sidebar .btn {
+	width: 100%;
+}
+
+.instructor-course-nav {
+	margin-bottom: 2rem;
+}
+
+.instructor-course-nav a {
+	padding-bottom: 1px;
+	border-bottom: 1px solid $brand-purple;
 }
 
 

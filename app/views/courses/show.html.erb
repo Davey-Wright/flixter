@@ -1,4 +1,9 @@
 <div class='courses-wrap'>
+	<nav class='instructor-course-nav'>
+		<% if current_user && current_user == @course.user %>
+			<%= link_to 'Administer', instructor_course_path %>
+		<% end %>
+	</nav>
 	<div class='course'>
 		<h1 class='course-title'><%= @course.title %></h1>
 		<div class='course-body'>
@@ -9,8 +14,15 @@
 			</div>
 			<p class='course-description'><%= @course.description %></p>
 		</div>
-		<% if current_user && current_user == @course.user %>
-			<%= link_to 'Administer', instructor_course_path, class: 'course-administer-link' %>
-		<% end %>
+		<div class='course-sections'>
+			<h2>Sections</h2>
+				<ol>
+					<% @course.sections.each do |section| %>
+						<li>
+							<h3 class='course-section-title'><%= section.title %></h3>
+						</li>
+					<% end %>
+				</ol>
+		</div>
 	</div>
 </div>
