@@ -1,41 +1,44 @@
 <div class='courses-wrap'>
 	<nav class='instructor-course-nav'>
-		<%= link_to 'Preview', course_path(@course), class: 'mr-4' %>
-		<%= link_to 'Add a Section', new_instructor_course_section_path(@course) %>
+		<%= link_to 'Preview', course_path(current_course), class: 'mr-4' %>
+		<%= link_to 'Add a Section', new_instructor_course_section_path(current_course) %>
 	</nav>
 	<div class='course'>
-		<h1 class='course-title'><%= @course.title %></h1>
+		<h1 class='course-title'><%= current_course.title %></h1>
 		<div class='course-body'>
 			<div class='course-sidebar'>
-				<h3 class='course-meta pb-2'><span>Cost</span><br/><strong><%= number_to_currency @course.cost, unit: '£' %></strong></h3>
+				<h3 class='course-meta pb-2'><span>Cost</span><br/><strong><%= number_to_currency current_course.cost, unit: '£' %></strong></h3>
 				<h3 class='course-meta pb-2'><span>Author</span><br/><strong>Davey Wright</strong></h3>
 				<%= link_to 'Enroll Now', '#', class: 'btn btn-cta' %>
 			</div>
-			<p class='course-description'><%= @course.description %></p>
+			<p class='course-description'><%= current_course.description %></p>
 		</div>
 		<section class='course-sections'>
 			<h2>Sections</h2>
-			<% @course.sections.each do |section| %>
-				<header class='course-section-header'>
-					<h3 class='course-section-title'><%= section.title %></h3>
-					<%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-cta'%>
-				</header>
-				<main class='section-lesson-main'>
-					<ol>
-						<li>
-							<% section.lessons.each do |lesson| %>
-								<article class='section-lesson-article'>
-									<h3 class='section-lesson-title'>
-										<%= lesson.title %>
-									</h3>
-									<h4 class='section-lesson-subtitle'>
-										- <%= lesson.subtitle %>
-									</h4>
-								</article>
-							<% end %>
-						</li>
-					</ol>
-				</main>
+
+			<% current_course.sections.each do |section| %>
+				<article class='course-section'>
+					<header class='course-section-header'>
+						<h3 class='course-section-title'><%= section.title %></h3>
+						<%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-cta'%>
+					</header>
+					<main class='section-lesson-main'>
+						<ol>
+							<li>
+								<% section.lessons.each do |lesson| %>
+									<article class='section-lesson-article'>
+										<h3 class='section-lesson-title'>
+											<%= lesson.title %>
+										</h3>
+										<h4 class='section-lesson-subtitle'>
+											- <%= lesson.subtitle %>
+										</h4>
+									</article>
+								<% end %>
+							</li>
+						</ol>
+					</main>
+				</article>
 			<% end %>
 		</section>
 	</div>

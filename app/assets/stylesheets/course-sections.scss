@@ -1,11 +1,15 @@
 @import 'utilities/variables';
 
+.course-section {
+	margin-bottom: 2rem;
+}
+
 .course-sections > h2 {
 	text-align: center;
 	font-size: 2rem;
 	line-height: 1.5em;
 	margin-bottom: 1.5rem;
-	text-decoration: underline;
+	font-weight: bold;
 }
 
 .course-section-header {
@@ -24,15 +28,17 @@
 
 .course-section-title {
 	font-size: 1.75rem;
+	font-weight: 200;
 }
 
 .section-lesson-main {
-	padding-left: 2rem;
+	padding-left: 4rem;
 }
 
 .section-lesson-article {
 	display: flex;
 	align-items: baseline;
+	margin-bottom: .5rem;
 }
 
 .section-lesson-title {
@@ -44,7 +50,7 @@
 	font-size: 1rem;
 	font-weight: 100;
 	font-style: italic;
-	margin-left: 1rem;
+	margin-left: .5rem;
 }
 
 

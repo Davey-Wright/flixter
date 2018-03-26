@@ -14,15 +14,29 @@
 			</div>
 			<p class='course-description'><%= @course.description %></p>
 		</div>
-		<div class='course-sections'>
+		<section class='course-sections'>
 			<h2>Sections</h2>
-				<ol>
-					<% @course.sections.each do |section| %>
+			<% @course.sections.each do |section| %>
+				<header class='course-section-header'>
+					<h3 class='course-section-title'><%= section.title %></h3>
+				</header>
+				<main class='section-lesson-main'>
+					<ol>
 						<li>
-							<h3 class='course-section-title'><%= section.title %></h3>
+							<% section.lessons.each do |lesson| %>
+								<article class='section-lesson-article'>
+									<h3 class='section-lesson-title'>
+										<%= lesson.title %>
+									</h3>
+									<h4 class='section-lesson-subtitle'>
+										- <%= lesson.subtitle %>
+									</h4>
+								</article>
+							<% end %>
 						</li>
-					<% end %>
-				</ol>
-		</div>
+					</ol>
+				</main>
+			<% end %>
+		</section>
 	</div>
 </div>

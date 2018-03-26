@@ -18,10 +18,17 @@ class Instructor::CoursesController < ApplicationController
 	end
 
 	def show
-		@course = Course.find(params[:id])
+		if current_course.user != current_user
+			return render plain: 'Unauthorized', status: :unauthorized
+		end
 	end
 
 	private
+	
+	helper_method :current_course
+	def current_course
+		@course ||= Course.find(params[:id])
+	end
 
 	def course_params
 		params.require(:course).permit(:title, :description, :cost)
