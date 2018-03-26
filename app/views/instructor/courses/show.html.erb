@@ -13,11 +13,30 @@
 			</div>
 			<p class='course-description'><%= @course.description %></p>
 		</div>
-		<div class='course-sections'>
+		<section class='course-sections'>
 			<h2>Sections</h2>
 			<% @course.sections.each do |section| %>
-				<h3 class='course-section-title'><%= section.title %></h3>
+				<header class='course-section-header'>
+					<h3 class='course-section-title'><%= section.title %></h3>
+					<%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-cta'%>
+				</header>
+				<main class='section-lesson-main'>
+					<ol>
+						<li>
+							<% section.lessons.each do |lesson| %>
+								<article class='section-lesson-article'>
+									<h3 class='section-lesson-title'>
+										<%= lesson.title %>
+									</h3>
+									<h4 class='section-lesson-subtitle'>
+										- <%= lesson.subtitle %>
+									</h4>
+								</article>
+							<% end %>
+						</li>
+					</ol>
+				</main>
 			<% end %>
-		</div>
+		</section>
 	</div>
 </div>
