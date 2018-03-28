@@ -5,4 +5,8 @@ class Course < ApplicationRecord
 	validates :title, presence: true
 	validates :description, presence: true
 	validates :cost, presence: true
+
+	def time_formatted
+		created_at.strftime('%Y-%M-%d')
+	end
 end

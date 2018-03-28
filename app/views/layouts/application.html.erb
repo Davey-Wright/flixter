@@ -15,11 +15,11 @@
 
 				  <h1><%= link_to 'Flixter', root_path, class: 'primaryNav-logo' %></h1>
 			    <nav class="primaryNav-links">
-			    	<% if user_signed_in? %>
 			    	<%= link_to 'Courses', courses_path, class: 'mr-4' %>
+			    	<% if user_signed_in? %>
 			    		<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 		        <% else %>
-		        	<%= link_to 'Log In', new_user_session_path, data: { :toggle => 'modal', :target => '#logInModal' }, class: 'mr-1 btn btn-clear' %>
+		        	<%= link_to 'Log In', new_user_session_path, data: { :toggle => 'modal', :target => '#logInModal' }, class: 'mr-4' %>
 		        	<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-cta" %>
 		        <% end %>
 		   		</nav>
@@ -65,10 +65,17 @@
 		<footer class='nav-wrap'>
 				<div id='footer'>
 					<div class='footer-inner'>
-		        <h3>Teacher</h3>
-		        <div class='footer-links'>
-		        	<%= link_to 'Teach a Course', new_instructor_course_path %>
-		        </div>
+						<% if user_signed_in? %>
+			        <h3>Teacher</h3>
+			        <div class='footer-links'>
+			        		<%= link_to 'Teach a Course', new_instructor_course_path %>
+			        </div>
+		        <% else %>
+		        	<h3>Guest</h3>
+			        <div class='footer-links'>
+			        		
+			        </div>
+		        <% end %>
 		      </div>
 	    </div>
 		</footer>
