@@ -6,16 +6,28 @@
 	margin: 6em auto;
 }
 
-.courses, .course{
+.course {
 	margin-bottom: 6rem;
 	display: flex;
 	flex-direction: column;
 }
 
+.courses {
+	margin-bottom: 6rem;
+}
+
+.courses-image {
+	align-self: flex-start;
+	padding-left: 0px;
+}
+
+.courses-details {
+	padding-right: 0px;
+}
+
 .courses-title {
 	color: $brand-purple;
 	font-size: 2rem;
-	line-height: 2em;
 	font-weight: 600;
 }
 
@@ -48,13 +60,10 @@
 	margin-bottom: .5em;
 }
 
-.course-meta strong {
-	color: $brand-purple;
-}
-
 .course-meta span {
-	font-weight: 400;
+	font-weight: 300;
 	font-style: italic;
+	text-decoration: underline;
 }
 
 .course-description {

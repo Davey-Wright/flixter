@@ -14,6 +14,7 @@ module Flixter
 
     config.paths.add File.join('app', 'presenters'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'presenters', '*')]
-
+    
   end
 end
+

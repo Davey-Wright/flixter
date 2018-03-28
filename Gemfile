@@ -54,10 +54,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bootstrap', '~> 4.0.0'
-
 gem 'simple_form'
-
 gem 'devise'
-
 gem 'pry'
+gem "figaro"
+
+# Image support
+gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
+gem "mini_magick"
+
 

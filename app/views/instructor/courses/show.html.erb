@@ -5,10 +5,11 @@
 	</nav>
 	<div class='course'>
 		<h1 class='course-title'><%= current_course.title %></h1>
+		<%= image_tag current_course.image, class: 'img-fluid mb-4' %>
 		<div class='course-body'>
 			<div class='course-sidebar'>
-				<h3 class='course-meta pb-2'><span>Cost</span><br/><strong><%= number_to_currency current_course.cost, unit: '£' %></strong></h3>
-				<h3 class='course-meta pb-2'><span>Author</span><br/><strong>Davey Wright</strong></h3>
+				<h3 class='course-meta pb-2'><span>Cost:</span><br/><strong><%= number_to_currency current_course.cost, unit: '£' %></strong></h3>
+				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong>Davey Wright</strong></h3>
 				<%= link_to 'Enroll Now', '#', class: 'btn btn-cta' %>
 			</div>
 			<p class='course-description'><%= current_course.description %></p>

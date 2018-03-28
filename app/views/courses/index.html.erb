@@ -1,13 +1,16 @@
 <div class='courses-wrap'>
 	<% @courses.each do |course| %>
-	<div class='courses'>
-		<%= link_to course.title, course_path(course), class: 'courses-title' %>
-		<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
+	<div class='courses d-lg-flex '>
+			<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
+		<article class='courses-details col-lg-7'>
+			<%= link_to course.title, course_path(course), class: 'courses-title' %>
+			<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
 
-		<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
-		<div class='courses-cta'>
-			<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
-		</div>
+			<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
+			<div class='courses-cta'>
+				<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
+			</div>
+		</article>
 	</div>
 	<% end %>
 </div>
