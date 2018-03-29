@@ -15,13 +15,16 @@
 			<p class='course-description'><%= current_course.description %></p>
 		</div>
 		<section class='course-sections'>
-			<h2>Sections</h2>
+			<div class='sections-header mb-2'>
+				<h2>Sections</h2>
+				<%= link_to 'Add a Section', new_instructor_course_section_path(current_course) %>
+			</div>
 
 			<% current_course.sections.each do |section| %>
 				<article class='course-section'>
 					<header class='course-section-header'>
 						<h3 class='course-section-title'><%= section.title %></h3>
-						<%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn btn-cta'%>
+						<%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class:'add-lesson-link'%>
 					</header>
 					<main class='section-lesson-main'>
 						<ol>
@@ -29,11 +32,12 @@
 								<% section.lessons.each do |lesson| %>
 									<article class='section-lesson-article'>
 										<h3 class='section-lesson-title'>
-											<%= lesson.title %>
+											<%= link_to lesson.title, lesson_path(lesson) %>
 										</h3>
 										<h4 class='section-lesson-subtitle'>
 											- <%= lesson.subtitle %>
 										</h4>
+										<%= link_to 'View Lesson', lesson_path(lesson), class:'section-lesson-link' %>
 									</article>
 								<% end %>
 							</li>

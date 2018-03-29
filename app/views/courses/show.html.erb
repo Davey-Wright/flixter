@@ -11,7 +11,11 @@
 			<div class='course-sidebar'>
 				<h3 class='course-meta pb-2'><span>Cost:</span><br/><strong><%= number_to_currency @course.cost, unit: '£' %></strong></h3>
 				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong>Davey Wright</strong></h3>
-				<%= link_to 'Enroll Now', '#', class: 'btn btn-cta' %>
+				<% if current_user && current_user.enrolled_in?(@course) %>
+					<h5 class='your-enrolled'>Your Enrolled!</h5>
+				<% else %>
+					<%= link_to 'Enroll Now', course_enrollments_path(@course), class: 'btn btn-cta', method: :post %>
+				<% end %>
 			</div>
 			<p class='course-description'><%= @course.description %></p>
 		</div>
@@ -27,12 +31,12 @@
 							<% section.lessons.each do |lesson| %>
 								<article class='section-lesson-article'>
 									<h3 class='section-lesson-title'>
-										<%= lesson.title %>
+										<%= link_to lesson.title, lesson_path(lesson) %>
 									</h3>
 									<h4 class='section-lesson-subtitle'>
 										- <%= lesson.subtitle %>
 									</h4>
-									<%= link_to 'Watch Video', lesson_path(lesson), class:'section-lesson-link' %>
+									<%= link_to 'View Lesson', lesson_path(lesson), class:'section-lesson-link' %>
 								</article>
 							<% end %>
 						</li>
