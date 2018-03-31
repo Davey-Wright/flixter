@@ -12,4 +12,13 @@ class Course < ApplicationRecord
 	def time_formatted
 		created_at.strftime('%Y-%M-%d')
 	end
+
+	def free?
+		cost.zero?
+	end
+
+	def premium?
+		! free?
+	end
+
 end

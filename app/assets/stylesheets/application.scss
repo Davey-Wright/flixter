@@ -14,3 +14,13 @@
  *= require_self
  */
 
+
+ .alert {
+ 	width: 100%;
+ 	text-align: center;
+ 	background: rgba(200, 0, 0, .7);
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+ 	color: white;
+ }
+

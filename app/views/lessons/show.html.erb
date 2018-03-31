@@ -1,10 +1,10 @@
 <div class='courses-wrap'>
-	<h1 class='lesson-title mb-4'><%= @lesson.title %></h1>
-	<h2 class='lesson-subtitle mb-4'><%= @lesson.subtitle %></h2>
+	<h1 class='lesson-title mb-4'><%= current_lesson.title %></h1>
+	<h2 class='lesson-subtitle mb-4'><%= current_lesson.subtitle %></h2>
 
 	<video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto"
   poster="<%= image_path('pink-dust.png') %>" data-setup="{}">
-    <source src="<%= @lesson.video.to_s %>" type='video/mp4'>
+    <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
     <noscript>	
 	    <p class="vjs-no-js">
 	      To view this video please enable JavaScript, and consider upgrading to a web browser that

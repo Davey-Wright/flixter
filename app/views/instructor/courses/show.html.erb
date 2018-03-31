@@ -1,7 +1,6 @@
 <div class='courses-wrap'>
 	<nav class='instructor-course-nav'>
 		<%= link_to 'Preview', course_path(current_course), class: 'mr-4' %>
-		<%= link_to 'Add a Section', new_instructor_course_section_path(current_course) %>
 	</nav>
 	<div class='course'>
 		<h1 class='course-title'><%= current_course.title %></h1>
