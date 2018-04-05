@@ -28,42 +28,43 @@
 				<h2>Sections</h2>
 				<%= link_to 'Add a Section', new_instructor_course_section_path(current_course) %>
 			</div>
-
-			<% current_course.sections.each do |section| %>
-				<article class='course-section'>
-					<header class='course-section-header'>
-						<h3 class='course-section-title'><%= section.title %></h3>
-						<%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class:'add-lesson-link'%>
-					</header>
-					<main class='section-lesson-main'>
-						<ol class='lessons'>
-							<% section.lessons.rank(:row_order).each do |lesson| %>
-								<li data-update-url=<%= instructor_lesson_path(lesson) %>>
-									<article class='section-lesson-article'>
-										<h3 class='section-lesson-title'>
-											<%= link_to lesson.title, lesson_path(lesson) %>
-										</h3>
-										<h4 class='section-lesson-subtitle'>
-											- <%= lesson.subtitle %>
-										</h4>
-										<%= link_to 'View Lesson', lesson_path(lesson), class:'section-lesson-link' %>
-									</article>
-								</li>
-							<% end %>
-						</ol>
-					</main>
-				</article>
-			<% end %>
+			<ol class='sections'>
+				<% current_course.sections.each do |section| %>
+					<li data-update-url=<%= instructor_section_path(section) %>>
+						<article class='course-section'>
+							<header class='course-section-header'>
+								<h3 class='course-section-title'><%= section.title %></h3>
+								<%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class:'add-lesson-link'%>
+							</header>
+							<main class='section-lesson-main'>
+								<ol class='lessons'>
+									<% section.lessons.rank(:row_order).each do |lesson| %>
+										<li data-update-url=<%= instructor_lesson_path(lesson) %>>
+											<article class='section-lesson-article'>
+												<h3 class='section-lesson-title'>
+													<%= link_to lesson.title, lesson_path(lesson) %>
+												</h3>
+												<h4 class='section-lesson-subtitle'>
+													- <%= lesson.subtitle %>
+												</h4>
+												<%= link_to 'View Lesson', lesson_path(lesson), class:'section-lesson-link' %>
+											</article>
+										</li>
+									<% end %>
+								</ol>
+							</main>
+						</article>
+					</li>
+				<% end %>
+			</ol>
 		</section>
 	</div>
 </div>
 
 <script type="text/javascript">
 	$(()=>{
+
 		$('.lessons').sortable({
-			start: (event, ui) => {
-				$(this).attr('data-previndex', ui.item.index());
-			},
 			update: (event, ui) => {
 				$.ajax({
 					type: 'PUT',
@@ -73,5 +74,17 @@
 				});
 			}
 		});
+
+		$('.sections').sortable({
+			update: (event, ui) => {
+				$.ajax({
+					type: 'PUT',
+					url: ui.item.attr('data-update-url'),
+					dataType: 'JSON',
+					data: { section: { row_order_position: ui.item.index() } }
+				});
+			}
+		});
+
 	});
 </script>
