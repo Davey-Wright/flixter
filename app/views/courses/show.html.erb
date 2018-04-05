@@ -59,8 +59,8 @@
 				</header>
 				<main class='section-lesson-main'>
 					<ol>
-						<li>
-							<% section.lessons.rank(:row_order).each do |lesson| %>
+						<% section.lessons.rank(:row_order).each do |lesson| %>
+							<li>
 								<article class='section-lesson-article'>
 									<h3 class='section-lesson-title'>
 										<%= link_to lesson.title, lesson_path(lesson) %>
@@ -70,8 +70,8 @@
 									</h4>
 									<%= link_to 'View Lesson', lesson_path(lesson), class:'section-lesson-link' %>
 								</article>
-							<% end %>
-						</li>
+							</li>
+						<% end %>
 					</ol>
 				</main>
 			<% end %>

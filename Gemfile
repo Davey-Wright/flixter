@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -53,6 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+
+
+
+# Added Gems
 gem 'bootstrap', '~> 4.0.0'
 
 # form support
@@ -77,4 +82,6 @@ gem 'carrierwave-aws'
 gem 'stripe'
 # reordering
 gem 'ranked-model'
+
+gem 'jquery-ui-rails'
 
