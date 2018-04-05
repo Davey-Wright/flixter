@@ -33,7 +33,8 @@
 					<li data-update-url=<%= instructor_section_path(section) %>>
 						<article class='course-section'>
 							<header class='course-section-header'>
-								<h3 class='course-section-title'><%= section.title %></h3>
+								<span class="fa fa-ellipsis-v mr-4"></span>
+								<h3 class='course-section-title mr-auto'><%= section.title %></h3>
 								<%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class:'add-lesson-link'%>
 							</header>
 							<main class='section-lesson-main'>
@@ -41,6 +42,7 @@
 									<% section.lessons.rank(:row_order).each do |lesson| %>
 										<li data-update-url=<%= instructor_lesson_path(lesson) %>>
 											<article class='section-lesson-article'>
+												<span class="fa fa-ellipsis-v mr-4"></span>
 												<h3 class='section-lesson-title'>
 													<%= link_to lesson.title, lesson_path(lesson) %>
 												</h3>
