@@ -54,15 +54,27 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'bootstrap', '~> 4.0.0'
+
+# form support
 gem 'simple_form'
+
+# user registration, sessions .etc
 gem 'devise'
 gem 'pry'
+#
 gem "figaro"
 
 # Image support
 gem 'carrierwave', '~> 1.0'
+# storage
 gem "fog-aws"
+# resize images
 gem "mini_magick"
+# storage
 gem 'carrierwave-aws'
+
+# payments
 gem 'stripe'
+# reordering
+gem 'ranked-model'
 

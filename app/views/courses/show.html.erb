@@ -60,7 +60,7 @@
 				<main class='section-lesson-main'>
 					<ol>
 						<li>
-							<% section.lessons.each do |lesson| %>
+							<% section.lessons.rank(:row_order).each do |lesson| %>
 								<article class='section-lesson-article'>
 									<h3 class='section-lesson-title'>
 										<%= link_to lesson.title, lesson_path(lesson) %>
