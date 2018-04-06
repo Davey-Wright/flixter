@@ -18,6 +18,8 @@ class Instructor::CoursesController < ApplicationController
 	end
 
 	def show
+		@section = Section.new
+		@lesson = Lesson.new
 		if current_course.user != current_user
 			return render plain: 'Unauthorized', status: :unauthorized
 		end

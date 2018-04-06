@@ -23,19 +23,79 @@
 			</div>
 			<p class='course-description'><%= current_course.description %></p>
 		</div>
+
+
+		<!-- New Section Modal -->
+		<div class="modal fade" id="new-section-modal" tabindex="-1" role="dialog" aria-labelledby="new-section-modal" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<h4 class="modal-title" id="photoModalLabel">Add a Section</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">×</span>
+		        </button>
+		      </div>
+		     	<%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+		      	<div class="modal-body">
+						  <div class="form-inputs">
+									<%= f.input :title %>
+						  </div>
+						</div>
+			      <div class="modal-footer">
+			      	<div class="form-actions">
+						    <%= f.submit 'Add Section', class: 'btn btn-cta' %>
+						    <button type="button" class="btn btn-clear mb-2" data-dismiss="modal">Cancel</button><br/>
+						  </div>
+			      </div>
+		     	<% end %>
+			  </div>
+			</div>
+		</div>
+
+
+		<!-- New Lesson Modal -->
+		<div class="modal fade" id="new-lesson-modal" tabindex="-1" role="dialog" aria-labelledby="new-lesson-modal" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<h4 class="modal-title" id="photoModalLabel">Add a Lesson</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">×</span>
+		        </button>
+		      </div>
+		     	<%= simple_form_for @lesson, url: "#" do |f| %>
+		      	<div class="modal-body">
+						  <div class="form-inputs">
+								<%= f.input :title %>
+								<%= f.input :subtitle %>
+								<%= f.input :video %>
+						  </div>
+						</div>
+			      <div class="modal-footer">
+			      	<div class="form-actions">
+						    <%= f.submit 'Add Lesson', class: 'create-lesson btn btn-cta' %>
+						    <button type="button" class="btn btn-clear" data-dismiss="modal">Cancel</button><br/>
+						  </div>
+			      </div>
+		     	<% end %>
+			  </div>
+			</div>
+		</div>
+
+
 		<section class='course-sections'>
 			<div class='sections-header mb-2'>
 				<h2>Sections</h2>
-				<%= link_to 'Add a Section', new_instructor_course_section_path(current_course) %>
+				<a href='#' data-toggle='modal', data-target='#new-section-modal'>Add a Section</a>
 			</div>
 			<ol class='sections'>
-				<% current_course.sections.each do |section| %>
+				<% current_course.sections.rank(:row_order).each do |section| %>
 					<li data-update-url=<%= instructor_section_path(section) %>>
 						<article class='course-section'>
 							<header class='course-section-header'>
 								<span class="fa fa-ellipsis-v mr-4"></span>
 								<h3 class='course-section-title mr-auto'><%= section.title %></h3>
-								<%= link_to 'Add New Lesson', new_instructor_section_lesson_path(section), class:'add-lesson-link'%>
+								<a href='#' class='new-lesson' data-lesson-url=<%= instructor_section_lessons_path(section) %> data-toggle='modal' data-target='#new-lesson-modal'>Add New Lesson</a>
 							</header>
 							<main class='section-lesson-main'>
 								<ol class='lessons'>
@@ -65,6 +125,12 @@
 
 <script type="text/javascript">
 	$(()=>{
+
+	 	$('.new-lesson').click((e)=>{
+	 		let url = $(e.target).attr('data-lesson-url');
+	 		$('#new_lesson').attr('action', url);
+	 		console.log(url);
+	 	});
 
 		$('.lessons').sortable({
 			update: (event, ui) => {

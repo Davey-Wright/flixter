@@ -1,9 +1,0 @@
-<div class='form-wrap'>
-	<h2>Add a New Lesson</h2>	
-	<%= simple_form_for @lesson, url: instructor_section_lessons_path(current_section) do |f| %>
-		<%= f.input :title %>
-		<%= f.input :subtitle %>
-		<%= f.input :video %>
-		<%= f.submit 'Add Lesson', class: 'btn btn-cta' %>
-	<% end %>
-</div>
