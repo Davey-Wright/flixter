@@ -1,0 +1,20 @@
+@import 'utilities/variables';
+
+.dashboard {
+	text-align: center;
+	margin-bottom: 3rem;
+	border-bottom: $border-dark;
+  border-top: $border-dark;
+  padding: 10px
+}
+
+.courses-learning {
+	background: #eee;
+	padding: 1rem;
+	font-size: 1.75rem;
+	font-weight: 200;
+}
+
+.courses-learning strong {
+	font-weight: bold;
+}
