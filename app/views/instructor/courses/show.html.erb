@@ -19,7 +19,7 @@
 					</strong>
 				</h3>
 				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong>Davey Wright</strong></h3>
-				<%= link_to 'Enroll Now', '#', class: 'btn btn-cta' %>
+				<h5 class='your-enrolled'>Your Enrolled!</h5>
 			</div>
 			<p class='course-description'><%= current_course.description %></p>
 		</div>
@@ -35,7 +35,7 @@
 		          <span aria-hidden="true">×</span>
 		        </button>
 		      </div>
-		     	<%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+		     	<%= simple_form_for @section, url: '#' do |f| %>
 		      	<div class="modal-body">
 						  <div class="form-inputs">
 									<%= f.input :title %>
@@ -44,7 +44,7 @@
 			      <div class="modal-footer">
 			      	<div class="form-actions">
 						    <%= f.submit 'Add Section', class: 'btn btn-cta' %>
-						    <button type="button" class="btn btn-clear mb-2" data-dismiss="modal">Cancel</button><br/>
+						    <button type="button" class="btn btn-clear" data-dismiss="modal">Cancel</button><br/>
 						  </div>
 			      </div>
 		     	<% end %>
@@ -86,7 +86,7 @@
 		<section class='course-sections'>
 			<div class='sections-header mb-2'>
 				<h2>Sections</h2>
-				<a href='#' data-toggle='modal', data-target='#new-section-modal'>Add a Section</a>
+				<a href='#' class='new-section' data-toggle='modal', data-target='#new-section-modal', data-section-url=<%= instructor_course_sections_path(current_course.id)%>>Add a Section</a>
 			</div>
 			<ol class='sections'>
 				<% current_course.sections.rank(:row_order).each do |section| %>
@@ -129,7 +129,11 @@
 	 	$('.new-lesson').click((e)=>{
 	 		let url = $(e.target).attr('data-lesson-url');
 	 		$('#new_lesson').attr('action', url);
-	 		console.log(url);
+	 	});
+
+	 	$('.new-section').click((e)=>{
+	 		let url = $(e.target).attr('data-section-url');
+	 		$('#new_section').attr('action', url);
 	 	});
 
 		$('.lessons').sortable({

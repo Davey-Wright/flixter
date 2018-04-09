@@ -14,7 +14,7 @@ class LessonsController < ApplicationController
 	end
 
 	def require_authorized_for_current_lesson
-		unless current_user.enrolled_in?(current_lesson.section.course)
+		unless current_user.enrolled_in?(current_lesson.section.course) || current_user == current_lesson.section.course.user
 			redirect_to course_path(current_lesson.section.course), alert: 'Youuuu shall not PASSSS!'
 		end
 	end

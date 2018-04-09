@@ -1,4 +1,12 @@
 <div class='courses-wrap'>
+	<div class='lesson-nav'>
+		<% if current_lesson.next_lesson.present? %>
+			<%= link_to lesson_path(current_lesson.next_lesson) do %>
+			Next Lesson &nbsp
+			<span class='fa fa-forward'></span>
+			<% end %>
+		<% end %>
+	</div>
 	<h1 class='lesson-title mb-4'><%= current_lesson.title %></h1>
 	<h2 class='lesson-subtitle mb-4'><%= current_lesson.subtitle %></h2>
 

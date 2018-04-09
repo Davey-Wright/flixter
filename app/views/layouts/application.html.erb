@@ -72,22 +72,40 @@
 		</main>
 
 		<footer class='nav-wrap'>
-				<div id='footer'>
-					<div class='footer-inner'>
+			<div id='footer'>
+				<div class='d-md-flex justify-content-md-between'>
+					<h3 class='footer-user'>
 						<% if user_signed_in? %>
-			        <h3>Teacher</h3>
-			        <div class='footer-links'>
-			        		<%= link_to 'Teach a Course', new_instructor_course_path %>
-			        </div>
+			        Teacher
 		        <% else %>
-		        	<h3>Guest</h3>
-			        <div class='footer-links'>
-			        		
-			        </div>
+		        	Guest
 		        <% end %>
-		      </div>
-	    </div>
+	        </h3>
+	        <div class='footer-links'>
+	        	<h3>Links</h3>
+        		<%= link_to 'Teach a Course', new_instructor_course_path %>
+        		<%= link_to 'Team', team_path %>
+		        <%= link_to 'Careers', careers_path %>
+		        <%= link_to 'Privacy Policy', privacy_path %>
+	        </div>
+	        <div class='footer-contact'>
+	        	<h3>Contact</h3>
+		        <p>mr-flixter@flix.com <br/>76 Windy road<br/>CF49 090<br/>United Kingdom</p>
+	        </div>
+	        <div class='footer-social'>
+        	 	<h3>Social</h3>
+        	 	<div class='social-links'>
+        	 		<span class="fa fa-github-square fa-2x social-button"></span>
+						  <span class="fa fa-facebook-square fa-2x social-button"></span>
+						  <span class="fa fa-twitter-square fa-2x social-button"></span>
+        	 	</div>
+	        </div>
+      	</div>
+    	</div>
 		</footer>
+
+
+
 	<script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
   </body>
 </html>

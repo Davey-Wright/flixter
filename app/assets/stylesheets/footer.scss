@@ -3,35 +3,24 @@
 #footer {
   position: relative;
   width: 100%;
-  min-height: 10rem;
   border-top: $border-dark;
   font-family: "Helvetica Neue", Helvetica;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 0 0 2rem 1rem;
 }
 
-.footer-inner {
+.footer-user {
+  padding-top: 2rem;
+  text-decoration: underline;
+}
+
+.footer-links, .footer-contact, .footer-social {
+  padding-top: 2rem;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .footer-links a {
   color: $brand-purple;
   font-weight: bold;
 }
-
-#footer h3 {
-  margin: 1rem 5rem 1rem 0;
-}
-
-/*
-footer {
-	position: absolute;
-	background: white;
-	width: 100%;
-	bottom: 0;
-	height: 150px;
-}
-*/
