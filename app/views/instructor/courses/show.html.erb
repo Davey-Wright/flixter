@@ -18,7 +18,7 @@
 						<% end %>
 					</strong>
 				</h3>
-				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong>Davey Wright</strong></h3>
+				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong><%= "#{current_course.user.first_name} #{current_course.user.last_name}" %></strong></h3>
 				<h5 class='your-enrolled'>Your Enrolled!</h5>
 			</div>
 			<p class='course-description'><%= current_course.description %></p>

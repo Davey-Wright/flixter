@@ -20,7 +20,6 @@
 		</div>
 
 		<h2 class='courses-learning'>Courses I'm <strong>Teaching</strong></h2>
-		<div class='courses-wrap'>
 			<% current_user.courses.each do |course| %>
 			<div class='courses d-lg-flex '>
 					<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
@@ -35,6 +34,4 @@
 				</article>
 			</div>
 			<% end %>
-		</div>
-
 </div>
