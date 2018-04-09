@@ -4,7 +4,13 @@
 			<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
 		<article class='courses-details col-lg-7'>
 			<%= link_to course.title, course_path(course), class: 'courses-title' %>
-			<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
+			<h3 class='courses-cost'>
+				<% if course.free? %>
+					FREE
+				<% else %>
+					<%= number_to_currency course.cost, unit: '£' %>	
+				<% end %>
+			</h3>
 
 			<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
 			<div class='courses-cta'>

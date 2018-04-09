@@ -23,7 +23,7 @@
 
 				<h3 class='course-meta pb-2'><span>Author:</span><br/><strong><%= "#{@course.user.first_name} #{@course.user.last_name}" %></strong></h3>
 				<% if current_user %>
-					<% if current_user.enrolled_in?(@course) %>
+					<% if current_user.enrolled_in?(@course) || current_user == @course.user %>
 						<h5 class='your-enrolled'>Your Enrolled!</h5>
 					<% else %>
 						<% if @course.free? %>
