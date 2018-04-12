@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Congratulations <%= @user.first_name %></h1>
+	<p>You are now enrolled in the <strong><%= @course.title %></strong> course</p>
+	<p>To begin the course just follow this link: <%= link_to 'HERE', course_url(@course) %></p>
+	<h3>Thanks for Enrolling!</h3>
+	<p><small>ps. </small>Remeber who taught you all your skills when you become the next David Blaine!</p>
+</body>
+</html>
