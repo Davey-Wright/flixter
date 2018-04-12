@@ -1,37 +1,39 @@
 <div class='courses-wrap'>
 	<h1 class='dashboard'>Dashboard</h1>
 
-		<h2 class='courses-learning'>Courses I'm <strong>Learning</strong></h2>
-		<div class='courses-wrap'>
-			<% current_user.enrolled_courses.each do |course| %>
-			<div class='courses d-lg-flex '>
-					<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
-				<article class='courses-details col-lg-7'>
-					<%= link_to course.title, course_path(course), class: 'courses-title' %>
-					<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
+	<h2 class='courses-learning'>Courses I'm <strong>Learning</strong></h2>
+	<div class='mt-4'>
+		<% current_user.enrolled_courses.each do |course| %>
+		<div class='courses d-lg-flex '>
+				<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
+			<article class='courses-details col-lg-7'>
+				<%= link_to course.title, course_path(course), class: 'courses-title' %>
+				<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
 
-					<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
-					<div class='courses-cta'>
-						<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
-					</div>
-				</article>
-			</div>
-			<% end %>
+				<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
+				<div class='courses-cta'>
+					<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
+				</div>
+			</article>
 		</div>
+		<% end %>
+	</div>
 
-		<h2 class='courses-learning'>Courses I'm <strong>Teaching</strong></h2>
-			<% current_user.courses.each do |course| %>
-			<div class='courses d-lg-flex '>
-					<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
-				<article class='courses-details col-lg-7'>
-					<%= link_to course.title, instructor_course_path(course), class: 'courses-title' %>
-					<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
+	<h2 class='courses-learning'>Courses I'm <strong>Teaching</strong></h2>
+	<div class='mt-4'> 
+		<% current_user.courses.each do |course| %>
+		<div class='courses d-lg-flex '>
+				<%= image_tag course.image, class: 'courses-image img-fluid col-lg-5' %>
+			<article class='courses-details col-lg-7'>
+				<%= link_to course.title, instructor_course_path(course), class: 'courses-title' %>
+				<h3 class='courses-cost'><%= number_to_currency course.cost, unit: '£' %></h3>
 
-					<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
-					<div class='courses-cta'>
-						<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
-					</div>
-				</article>
-			</div>
-			<% end %>
+				<p class='courses-description'><%= truncate(course.description, length: 250, separator: ' ') %></p>
+				<div class='courses-cta'>
+					<%= link_to 'More Details', course_path(course), class: 'btn btn-cta' %>
+				</div>
+			</article>
+		</div>
+	<% end %>
+	</div>
 </div>
